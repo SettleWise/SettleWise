@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Team PR"
+  short_description: "Create consistent, review-ready team pull requests"
+  default_prompt: "Use $create-team-pr to validate my branch and create a review-ready pull request."
