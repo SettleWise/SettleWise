@@ -1,0 +1,51 @@
+name: Feature implementation
+description: Break an approved feature specification into an implementable unit of work.
+title: "feat: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only after its feature specification has been approved and merged.
+  - type: input
+    id: approved_spec
+    attributes:
+      label: Approved feature specification
+      description: Link to the approved file on the default branch and include its title.
+      placeholder: ".kiro/specs/example-feature/"
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: Describe the self-contained behavior this issue will deliver.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: Copy the relevant, testable criteria from the approved spec.
+    validations:
+      required: true
+  - type: textarea
+    id: implementation_notes
+    attributes:
+      label: Implementation notes
+      description: Identify affected components, contracts, migrations, dependencies, or constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: List automated checks and required manual verification.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and follow-ups
+      description: Link blocking issues and explicitly note deferred work. Write "None" if applicable.
+    validations:
+      required: true
