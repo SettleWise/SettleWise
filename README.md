@@ -12,6 +12,13 @@ setup tasks, transportation, groceries, healthcare, and social integration).
 SettleWise/
 ├── frontend/   # Next.js + React + Tailwind CSS (TypeScript)
 ├── backend/    # FastAPI + Pydantic (Python)
+├── .kiro/
+│   ├── specs/      # Kiro feature requirements, designs, and task plans
+│   └── steering/   # Shared Kiro product, stack, structure, and workflow context
+├── docs/
+│   ├── adr/        # Architecture Decision Records (durable technical/process decisions)
+│   ├── specs/      # Kiro spec review and approval workflow documentation
+│   └── sdd-tool-comparison.md
 ├── .pre-commit-config.yaml
 └── README.md
 ```
@@ -96,3 +103,29 @@ against the whole repo:
 ```bash
 ./backend/.venv/bin/pre-commit run --all-files
 ```
+
+## Spec-driven development
+
+SettleWise uses Kiro for spec-driven development. Kiro feature artifacts are committed under
+`.kiro/specs/` and reviewed in GitHub before implementation. See
+[`docs/specs/README.md`](docs/specs/README.md) for the team workflow and
+[`docs/sdd-tool-comparison.md`](docs/sdd-tool-comparison.md) for the tool decision.
+
+Use a Kiro spec for new capabilities, material behavior changes, API/data changes, integrations,
+or security/privacy work. Use a Kiro bug or quick spec when a smaller change needs investigation
+or a plan. Do not create a spec for trivial typos, routine chores, or behavior-preserving refactors;
+use a normal GitHub issue and PR instead.
+
+## Architecture decision records
+
+`docs/adr/` contains Architecture Decision Records (ADRs): short, permanent notes explaining an
+important technical or process decision, why it was made, alternatives considered, and its
+consequences. For example, [`0001-adopt-kiro-sdd.md`](docs/adr/0001-adopt-kiro-sdd.md) records
+why the team chose Kiro for spec-driven development.
+
+Create an ADR for durable decisions such as authentication architecture, data ownership, API
+compatibility, or team tooling. Do not use ADRs for ordinary feature requirements; those belong in
+`.kiro/specs/` when planning is needed, or in a normal GitHub issue for routine work. If a feature
+implements a durable decision, create both: an ADR for the decision and a Kiro spec for its
+requirements, design, and tasks. See [`docs/adr/README.md`](docs/adr/README.md) for the format and
+numbering rules.
