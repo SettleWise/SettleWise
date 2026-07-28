@@ -1,3 +1,5 @@
+<!-- Source branch convention: BR-<GitHub-issue-number>-<kebab-case-feature-name>. -->
+
 ## What
 
 <!-- Describe the user-visible and technical changes. -->
@@ -5,6 +7,11 @@
 ## Why
 
 <!-- Explain the problem or goal. Link the issue with "Closes #123" when applicable. -->
+
+## Specification
+
+<!-- Link the approved feature specification for implementation work. For a spec-only PR,
+state "This PR is the spec review" and include its proposed status. -->
 
 ## How
 
@@ -36,5 +43,7 @@
 ## Checklist
 
 - [ ] Scope is focused and linked to an issue when applicable
+- [ ] Source branch follows `BR-<GitHub-issue-number>-<kebab-case-feature-name>`
+- [ ] Implementation work links to an approved feature specification
 - [ ] Documentation and examples are updated
 - [ ] Breaking changes and migrations are documented
